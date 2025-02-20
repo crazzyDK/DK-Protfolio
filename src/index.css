@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.5s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.5s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scroll animations */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+.reveal.fade-bottom {
+  transform: translateY(50px);
+}
+
+.reveal.fade-bottom.active {
+  transform: translateY(0);
+}
+
+.reveal.fade-left {
+  transform: translateX(-50px);
+}
+
+.reveal.fade-left.active {
+  transform: translateX(0);
+}
+
+.reveal.fade-right {
+  transform: translateX(50px);
+}
+
+.reveal.fade-right.active {
+  transform: translateX(0);
+}
+
+.reveal.scale {
+  transform: scale(0.9);
+}
+
+.reveal.scale.active {
+  transform: scale(1);
+}
+
+/* Stagger delays for children */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.stagger.active > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
+.stagger.active > *:nth-child(2) { transition-delay: 0.2s; }
+.stagger.active > *:nth-child(3) { transition-delay: 0.3s; }
+.stagger.active > *:nth-child(4) { transition-delay: 0.4s; }
+.stagger.active > *:nth-child(5) { transition-delay: 0.5s; }
+.stagger.active > *:nth-child(6) { transition-delay: 0.6s; }
